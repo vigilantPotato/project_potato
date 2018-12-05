@@ -1,0 +1,1 @@
+web: gunicorn ppotatp_project.wsgi --log-file -

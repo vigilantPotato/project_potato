@@ -1,1 +1,1 @@
-web: gunicorn ppotatp_project.wsgi --log-file -
+web: gunicorn potato_project.wsgi --log-file -

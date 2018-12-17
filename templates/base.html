@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Potato projects{% endblock title %}</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'home' %}"><h1>Potato Projects</h1></a>
+            <nav>
+                <ul class="clearfix">
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'about' %}">ABOUT</a></li>
+                    <li><a href="{% url 'contents' %}">CONTENTS</a></li>
+                    <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer>
+            <ul>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'about' %}">ABOUT</a></li>
+                <li><a href="{% url 'contents' %}">CONTENTS</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+            </ul>
+            <small>Copyright &copy; 2018 Potato Projects, All Rights Reserved.</small>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,444 @@
+@charset "utf-8";
+body {
+  font-family: "Yu Mincho", YuMincho, serif;
+}
+/* ======================= ヘッダー */
+header {
+  border-top: 10px solid #511717; /* 上ボーダーに10px、実線、茶色（#511717）を指定 */
+  text-align: center;
+}
+
+header a:link,
+header a:visited {
+  text-decoration: none;
+}
+
+header h1 {
+  margin: 50px 0 30px 0; /* 上50px、右0px、下30px、左0px のマージンを指定 */
+  color: #511717;
+}
+
+header nav ul { /* リスト */
+  width: auto;
+  padding-left: 0; /* デフォルトスタイルをリセット */
+  margin: 0 auto 30px auto; /* 上 0px、右 auto、下 30px、左 auto */
+  list-style-type: none; /* リストマーカーを消す */
+}
+header nav ul li { /* リスト項目 */
+  width: 155px; /* 幅を155pxに指定 */
+  margin-right: 2px; /* リスト項目と右隣りのリスト項目の間を2px空ける */
+  /*float: left; /* 左フロート */
+  display: inline-block;
+  text-align: center; /* テキストを中央揃え */
+}
+
+header nav ul li:last-child {/* 最後のリスト項目 */
+  margin-right: 0; /* 右マージン0 */
+}
+.clearfix:after { /* clearfix */
+  content:"";
+  display: block;
+  clear: both;
+}
+header nav ul li a {
+  text-decoration: none; /* 下線を消す */
+  background-color: #511717; /* 背景色を茶色（#511717）に */
+  color: #fff; /* 文字色を白（#fff） */
+  padding: 10px 0; /* パディング 上下10px 左右0px */
+  display: block; /* ブロックレベル表示 */
+}
+header nav ul li a:hover, /* カーソルを乗せた時 */
+header nav ul li a:active{ /* クリックした時 */
+  background-color: #000;
+}
+/* ======================= フッター */
+footer {
+  background-color: #511717;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center; /* 中央揃え */
+}
+footer ul {
+  padding: 0;
+  margin-bottom: 30px;
+}
+footer ul {
+  margin-bottom: 30px;
+  padding: 0;
+}
+footer ul li {
+  display: inline; /* インライン表示にして横並びに配置 */
+  margin: 0 10px;
+}
+footer ul li a {
+  color: #fff;
+}
+footer ul li a:link,
+footer ul li a:visited {
+  text-decoration: none; /* 下線を消す */
+}
+footer ul li a:hover,
+footer ul li a:active {
+  text-decoration: underline; /* 下線を表示する */
+}
+/* ======================= メイン */
+main {
+  width: 940px;
+  margin: 0 auto; /* 中央に配置 */
+}
+/* パンくずリスト */
+#topic_path {
+  padding-left: 0;
+}
+#topic_path li {
+  display: inline;
+  font-size: 80%;
+}
+#topic_path li:after {
+  padding: 0 10px;
+  content: "\003E"; /* 大なり記号を挿入 */
+}
+#topic_path li:last-child:after { /* 最後のli要素の後ろ */
+  content: none;
+}
+main a:link,
+main a:visited {
+  color: #511717;
+}
+/* 大見出し */
+main h1 {
+  border-left: 10px solid #511717; /* 左ボーダーを茶色（#511717）の10px幅の実線で */
+  border-bottom: 1px solid #511717;/* 下ボーダーを茶色（#511717）の1px幅の実線で */
+  padding: 5px 10px; /* 上下5px 左右10pxのパディング */
+  margin-bottom: 30px; /* 30pxの下マージン */
+  font-size: 1.8em;
+}
+/* 中見出し */
+main h2 {
+  font-size: 1.5em;
+  text-align: center;
+  position: relative; /* 基準位置 */
+  margin-bottom: 50px;
+}
+main h2:before,
+main h2:after {
+  position: absolute; /* 絶対配置 */
+  content: ""; /* 空の内容挿入 */
+  border-top: 1px dotted #511717;
+  width: 300px;
+  top: 50%;
+}
+main h2:before {
+  left: 0;
+}
+main h2:after {
+  right: 0;
+}
+/* ページトップ */
+.page_top {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+.page_top a {
+  padding-top: 4px;
+  border-top: 4px solid #511717;
+}
+.page_top a:before {
+  content: "↑"; /* 上向きの矢印 */
+}
+.page_top a:link,
+.page_top a:visited {
+  color: #511717;
+  text-decoration: none;
+}
+/* リード文 */
+.lead {
+  line-height: 1.8em;
+  margin-bottom: 3em;
+  font-size: 110%;
+}
+/* ====================== HOME(index.html) */
+#main_visual {
+  margin-bottom: 30px;
+}
+#main_content {
+  width: 600px;
+  float: left;
+}
+#banner {
+  width: 300px;
+  float: right;
+}
+#home h2 {
+  text-align: left;
+  border-left: 10px solid #511717;
+  border-bottom: 1px solid #511717;
+  padding: 5px 10px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+}
+#home main h2:before,
+#home main h2:after {
+  border-top: none; /* 挿入したボーダーを消す */
+}
+/* お知らせ、店舗情報 */
+#news dl, #info dl {
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+#news dt, #news dd,
+#info dt, #info dd {
+  line-height: 1.5; /* 行の高さを揃える */
+}
+#news dt, #info dt {
+  width: 8em;
+  float: left;
+}
+#news dd, #info dd {
+  margin-left: 8em;
+}
+/* バナーエリア */
+#banner ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#banner ul li {
+  margin-bottom: 20px;
+}
+/* ====================== ABOUT(about.html) */
+.box {
+  width: 300px;
+  margin-right: 20px;
+  float: left;
+}
+.box:last-child { /* 最後の.box */
+  margin-right: 0;
+}
+.box h3 {
+  text-align: center;
+}
+.box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  border: 5px solid #fff;
+  box-sizing: border-box; /* 幅の算出にボーダーを含める */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.22); /* 影を付ける */
+}
+p.photo {
+  margin-bottom: 30px;
+}
+#inside p {
+  font-size: 0.9em;
+  line-height: 1.8;
+}
+
+/* テーブル */
+table {
+  border-collapse: collapse;
+  margin: 0 auto 30px;
+  border: 1px solid #813737;
+}
+table th, table td {
+  padding: 10px 20px;
+}
+table th {
+  border-right: 1px solid #813737;
+}
+table tr:nth-child(odd) { /* 奇数行毎に */
+  background-color: #E1CFBA;
+}
+/* ====================== CONTACT(contact.html) */
+#contact form {
+  width: 820px;
+  margin: 0 auto;
+}
+#contact dl dt, #contact dl dd {
+  line-height: 2em;
+  margin-left: 0;
+}
+#contact dl dt {
+  width: 380px;
+  float: left;
+  text-align: right;
+  padding: 10px;
+}
+#contact dl dd {
+  width: 400px;
+  float: right;
+  padding: 10px;
+}
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  padding: 5px;
+  width: 300px;
+}
+#contact textarea {
+  height: 5em;
+}
+#contact .button {
+  text-align: center;
+}
+#contact input[type="submit"] {
+  background-color: #511717;
+  color: #fff;
+  padding: 10px 30px;
+  font-family: "Yu Gothic",YuGothic, sans-rerif;
+  border: 1px solid #511717;
+  cursor: pointer; /* カーソルをポインターに */
+}
+/* ====================== ACCESS(access.html) */
+#access h2 {
+  letter-spacing: 2em;
+}
+/* ====================== MENU(menu.html) */
+#menu .image {
+  width: 400px;
+  margin-bottom: 20px;
+  float: left;
+}
+#menu table {
+  width: 540px;
+  float: right;
+}
+/* ====================== COUPON(coupon.html) */
+.coupon {
+  border: 3px dashed #630;
+  padding: 30px;
+  width: 60%;
+  margin: 0 auto 30px auto;
+  background: #fff;
+  font-family: "Yu Gothic", YuGothic, sans-serif;
+}
+.coupon h3 {
+  font-size: 200%;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.coupon em {
+  font-style: normal;
+}
+.sv {
+  background: #E0D9B5;
+  padding: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 150%;
+}
+.sv em {
+  padding-left: 10px;
+  font-size: 150%;
+  font-weight: bold;
+  color: #c33;
+}
+.code {
+  background: #c33;
+  color: #fff;
+  text-align: center;
+  padding: 4px;
+  margin: 0;
+}
+.code p {
+  border: 1px dashed #fff;
+  line-height: 1;
+  margin: 0;
+  padding: 20px;
+}
+.code span {
+  display: block;
+  font-size: 80%;
+  padding-bottom: 10px;
+}
+.code em {
+  font-size: 150%;
+  ;
+}
+/* ====================== スマートフォン */
+@media screen and (max-width: 767px){
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  header, main, #main_content, #banner, header nav ul {
+    width: 100%;
+  }
+  header nav ul li {
+    margin-right: 0;
+    width: 50%; /* 幅を50%に指定 */
+    box-sizing: border-box; /* ボーダーの幅を50%に含める */
+    border:1px solid #fff;
+  }
+  main {
+    padding: 0 15px;  /* 上下0px、左右15px */
+    box-sizing: border-box; /* パディングを幅に含める */
+  }
+  #banner {
+    float: none;
+    text-align: center;
+  }
+  footer ul {
+    display: none; /* 非表示に */
+  }
+
+  /* === ABOUT === */
+  main h2:before,
+  main h2:after {
+    content: none;
+  }
+  .box {
+    width: 100%;
+    margin-right: 0;
+    float: none;
+  }
+  .box img {
+    margin: 0 auto;
+  }
+  p.photo {
+    margin-top: 30px;
+  }
+  /* === MENU === */
+  #menu .image {
+    width: 100%;
+    margin-bottom: 20px;
+    float: none;
+    text-align: center;
+  }
+  #menu table {
+    width: 100%;
+    float: none;
+  }
+  /* === CONTACT === */
+  #contact form {
+    width: 100%;
+  }
+  #contact dl dt {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    float: none;
+    background-color: #E1CFBA;
+    padding: 5px;
+  }
+  #contact dl dd {
+    width: 100%;
+    box-sizing: border-box;
+    float: none;
+    margin-bottom: 20px;
+  }
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact textarea {
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* === ACCESS === */
+  #access iframe {
+    width: 100%;
+  }
+}
